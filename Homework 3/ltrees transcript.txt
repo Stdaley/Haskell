@@ -1,0 +1,103 @@
+*ITree> quickCheck prop_reroot
++++ OK, passed 100 tests.
+
+*ITree> quickCheck prop_fetch
++++ OK, passed 100 tests.
+
+*ITree> quickCheck prop_index
++++ OK, passed 100 tests.
+
+*ITree> quickCheck prop_treeInsert2
++++ OK, passed 100 tests.
+
+*ITree> quickCheck prop_treeInsert1
++++ OK, passed 100 tests.
+
+----------------------------------
+
+*ITree> build "defabc"
+Node 'd' (Node 'a' Empty (Node 'b' Empty (Node 'c' Empty Empty 0) 0) 0) (Node 'e' Empty (Node 'f' Empty Empty 0) 0) 3
+
+----------------------------------
+*ITree> rr t0
+Node 'a' Empty (Node 'd' (Node 'b' Empty (Node 'c' Empty Empty 0) 0) (Node 'e' Empty (Node 'f' Empty Empty 0) 0) 2) 0
+
+*ITree> rl t0
+Node 'e' (Node 'd' (Node 'a' Empty (Node 'b' Empty (Node 'c' Empty Empty 0) 0) 0) Empty 3) (Node 'f' Empty Empty 0) 4
+
+----------------------------------
+*ITree> reroot Empty 'a'
+*** Exception: a is not in the ITree
+
+*ITree> reroot t0 'z'
+*** Exception: z is not in the ITree
+
+*ITree> reroot t0 'f'
+Node 'f' (Node 'd' (Node 'a' Empty (Node 'b' Empty (Node 'c' Empty Empty 0) 0) 0) (Node 'e' Empty Empty 0) 3) Empty 5
+
+*ITree> reroot t0 'a'
+Node 'a' Empty (Node 'd' (Node 'b' Empty (Node 'c' Empty Empty 0) 0) (Node 'e' Empty (Node 'f' Empty Empty 0) 0) 2) 0
+
+*ITree> reroot t0 'b'
+Node 'b' (Node 'a' Empty Empty 0) (Node 'd' (Node 'c' Empty Empty 0) (Node 'e' Empty (Node 'f' Empty Empty 0) 0) 1) 1
+
+----------------------------------
+*ITree> fetch Empty 0
+*** Exception: index out of bounds
+
+*ITree> fetch t0 0
+'a'
+
+*ITree> fetch t0 1
+'b'
+
+*ITree> fetch t0 2
+'c'
+
+*ITree> fetch t0 3
+'d'
+
+*ITree> fetch t0 4
+'e'
+
+*ITree> fetch t0 5
+'f'
+----------------------------------
+
+*ITree> index Empty 'a'
+*** Exception: a not in the tree
+
+*ITree> index t0 'a'
+0
+
+*ITree> index t0 'd'
+3
+
+*ITree> index t0 'c'
+2
+
+*ITree> index t0 'f'
+5
+
+*ITree> index t0 'w'
+*** Exception: w not in the tree
+
+----------------------------------
+
+*ITree> treeInsert t0 'j'
+Node 'd' (Node 'a' Empty (Node 'b' Empty (Node 'c' Empty Empty 0) 0) 0) (Node 'e' Empty (Node 'f' Empty (Node 'j' Empty Empty 0) 0) 0) 3
+
+*ITree> treeInsert t0 'x'
+Node 'd' (Node 'a' Empty (Node 'b' Empty (Node 'c' Empty Empty 0) 0) 0) (Node 'e' Empty (Node 'f' Empty (Node 'x' Empty Empty 0) 0) 0) 3
+
+*ITree> treeInsert t0 'd'
+*** Exception: d already in the tree
+
+*ITree> treeInsert t0 'i'
+Node 'd' (Node 'a' Empty (Node 'b' Empty (Node 'c' Empty Empty 0) 0) 0) (Node 'e' Empty (Node 'f' Empty (Node 'i' Empty Empty 0) 0) 0) 3
+
+*ITree> treeInsert t0 'x'
+Node 'd' (Node 'a' Empty (Node 'b' Empty (Node 'c' Empty Empty 0) 0) 0) (Node 'e' Empty (Node 'f' Empty (Node 'x' Empty Empty 0) 0) 0) 3
+
+*ITree> treeInsert Empty 'x'
+Node 'x' Empty Empty 0

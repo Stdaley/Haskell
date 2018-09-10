@@ -1,0 +1,81 @@
+*Main> rmChar 'x' "foo" 
+"foo"
+*Main> rmChar 'x' "foxx"
+"fo"
+*Main> rmChar 'x' "xfoxx"
+"fo"
+*Main> rmChar 's' "shania"
+"hania"
+*Main> rmChar 'a' "shania"
+"shni"
+
+--------------------------
+
+*Main> rmCharsRec "ox" "foxoxox"
+"f"
+*Main> rmCharsRec "wx" "foo"
+"foo"
+*Main> rmCharsRec "ox" "qfofxoxoox"
+"qff"
+*Main> rmCharsRec "shan" "shania"
+"i"
+*Main> rmCharsRec "hhh" "highhopeshoelper"
+"igopesoelper"
+
+--------------------------
+
+*Main> rmCharsFold "ox" "foxoxox"
+"f"
+*Main> rmCharsFold "wx" "foo"
+"foo"
+*Main> rmCharsFold "ox" "qfofxoxoox"
+"qff"
+*Main> rmCharsFold "shan" "shania"
+"i"
+*Main> rmCharsFold "hhh" "highhopeshoelper"
+"igopesoelper"
+
+--------------------------
+
+*Main> andRec []
+True
+*Main> andRec [True,True]
+True
+*Main> andRec [True,False]
+False
+*Main> andRec [False,False]
+False
+*Main> andRec [False,True]
+False
+
+--------------------------
+
+*Main> andFold []
+True
+*Main> andFold [True,False]
+False
+*Main> andFold [False,False]
+False
+*Main> andFold [True,True]
+True
+*Main> andFold [False,True]
+False
+
+--------------------------
+
+*Main> same []
+True
+*Main> same [22]
+True
+*Main> same [5,5,5]
+True
+*Main> same [5,5,4]
+False
+*Main> same [5,2,4]
+False
+*Main> same [1,2,4]
+False
+*Main> same [3,4]
+False
+*Main> same[1]
+True
