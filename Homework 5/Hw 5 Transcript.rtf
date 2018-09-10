@@ -1,0 +1,41 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+Problem 5\
+*Main> eval(Div (Num 10) (Num 0))\
+*** Exception: Cannot divide by 0\
+\
+*Main> eval(Div (Num 10) (Num 5))\
+2\
+\
+*Main> eval (Div (Num 1000) (Num 10))\
+100\
+\
+*Main> eval (Div (Num 0) (Num 10))\
+0\
+\
+\
+\
+Problem 6\
+*Main> eval (Cond (Num 1) (Num 10) (Div (Num 1) (Num 0)))\
+10\
+*Main> eval (Cond (Num 0) (Div (Num 1) (Num 0)) (Num 20) )\
+20\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 *Main> eval (Cond (Num 10) (Mult (Num 6) (Num 5)) (Num 17))\
+30\
+\
+*Main> eval (Cond (Num 0) (Mult (Num 6) (Num 5)) (Num 17))\
+17\
+\
+*Main> eval (Cond (Add (Num 23) (Num 7)) (Sub (Num 9) (Num 4)) (Div (Num 3) (Num 0)))\
+5\
+\
+*Main> eval (Cond (Add(Num 0) (Num 0)) (Sub (Num 9) (Num 4)) (Div (Num 3) (Num 0)))\
+*** Exception: Cannot divide by 0}
