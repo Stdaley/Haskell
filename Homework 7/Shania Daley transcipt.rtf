@@ -1,0 +1,575 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \ul \ulc0 Shania Daley\
+Homework 7\
+\
+Problem 1\
+
+\b0 \ulnone *LCvm> (incTest 0)\
+Step 1\
+   0: Push 0\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Inc\
+Stack:     [0]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   3: Halt\
+Stack:     [1]\
+Regs(!=0): 	<tap return>
+\b \ul \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b0 \cf0 \ulnone \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b \cf0 \ul \ulc0 \
+
+\b0 \ulnone *LCvm> (incTest 1)\
+Step 1\
+   0: Push 1\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Inc\
+Stack:     [1]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   3: Halt\
+Stack:     [2]\
+Regs(!=0): 	<tap return>
+\b \ul \
+\
+
+\b0 \ulnone \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+*LCvm> (incTest 3)\
+Step 1\
+   0: Push 3\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Inc\
+Stack:     [3]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   3: Halt\
+Stack:     [4]\
+Regs(!=0): 	<tap return>
+\b \ul \
+\
+\
+Problem 2\
+
+\b0 \ulnone *LCvm> dupTest []\
+Step 1\
+   0: Dup\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   1: Halt\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 *LCvm> dupTest [3,4,5]\
+Step 1\
+   0: Push 3\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Push 4\
+Stack:     [3]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   4: Push 5\
+Stack:     [3,4]\
+Regs(!=0): 	<tap return>\
+Step 4\
+   6: Dup\
+Stack:     [3,4,5]\
+Regs(!=0): 	<tap return>\
+Step 5\
+   7: Halt\
+Stack:     [3,4,5,5]\
+Regs(!=0): 	<tap return>
+\b \ul \
+\
+
+\b0 \ulnone \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\b \ul \
+
+\b0 \ulnone *LCvm> dupTest [5,2]\
+Step 1\
+   0: Push 5\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Push 2\
+Stack:     [5]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   4: Dup\
+Stack:     [5,2]\
+Regs(!=0): 	<tap return>\
+Step 4\
+   5: Halt\
+Stack:     [5,2,2]\
+Regs(!=0): 	<tap return>\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\b \ul \
+\
+
+\b0 \ulnone *LCvm> dupTest [5]\
+Step 1\
+   0: Push 5\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Dup\
+Stack:     [5]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   3: Halt\
+Stack:     [5,5]\
+Regs(!=0): 	<tap return>
+\b \ul \
+\
+Problem 3\
+
+\b0 \ulnone *LCvm> niTest 0\
+Step 1\
+   0: Push 0\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Ni\
+Stack:     [0]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   3: Halt\
+Stack:     [1]\
+Regs(!=0): 	<tap return>\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+*LCvm> niTest 3\
+Step 1\
+   0: Push 3\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Ni\
+Stack:     [3]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   3: Halt\
+Stack:     [0]\
+\
+
+\b \ul Problem 4\
+
+\b0 \ulnone \
+*LCvm> callRetTest 5\
+Step 7\
+   4: Halt\
+Stack:     [20]\
+Regs(!=0): x0=10 	<tap return>\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+*LCvm> callRetTest 255\
+Step 1\
+   0: Call 4\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   4: Halt\
+Stack:     [2]\
+Regs(!=0): 	<tap return>\
+\
+\
+
+\b \ul Problem 5
+\b0 \ulnone  \
+*Main> notTest1\
+The program:\
+	if ( not tt) then x1 := 2 else x1 := 1\
+compiles to\
+   0: Push 1\
+   2: Ni\
+   3: Jz 8\
+   5: Push 2\
+   7: Store 1\
+   9: Pop\
+  10: Jmp 6\
+  12: Push 1\
+  14: Store 1\
+  16: Pop\
+  17: Halt\
+Here is the run:\
+Step 1\
+   0: Push 1\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Ni\
+Stack:     [1]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   3: Jz 8\
+Stack:     [0]\
+Regs(!=0): 	<tap return>\
+Step 4\
+  12: Push 1\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 5\
+  14: Store 1\
+Stack:     [1]\
+Regs(!=0): 	<tap return>\
+Step 6\
+  16: Pop\
+Stack:     [1]\
+Regs(!=0): x1=1 	<tap return>\
+Step 7\
+  17: Halt\
+Stack:     []\
+Regs(!=0): x1=1 	<tap return>\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+*Main> notTest2\
+The program:\
+	if ( not ff) then x1 := 2 else x1 := 1\
+compiles to\
+   0: Push 0\
+   2: Ni\
+   3: Jz 8\
+   5: Push 2\
+   7: Store 1\
+   9: Pop\
+  10: Jmp 6\
+  12: Push 1\
+  14: Store 1\
+  16: Pop\
+  17: Halt\
+Here is the run:\
+Step 1\
+   0: Push 0\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Ni\
+Stack:     [0]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   3: Jz 8\
+Stack:     [1]\
+Regs(!=0): 	<tap return>\
+Step 4\
+   5: Push 2\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 5\
+   7: Store 1\
+Stack:     [2]\
+Regs(!=0): 	<tap return>\
+Step 6\
+   9: Pop\
+Stack:     [2]\
+Regs(!=0): x1=2 	<tap return>\
+Step 7\
+  10: Jmp 6\
+Stack:     []\
+Regs(!=0): x1=2 	<tap return>\
+Step 8\
+  17: Halt\
+Stack:     []\
+Regs(!=0): x1=2 	<tap return>\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+*Main> leqTest 4 5\
+Step 1\
+   0: Push 5\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Push 4\
+Stack:     [5]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   4: Ilt\
+Stack:     [5,4]\
+Regs(!=0): 	<tap return>\
+Step 4\
+   5: Ni\
+Stack:     [0]\
+Regs(!=0): 	<tap return>\
+Step 5\
+   6: Jz 8\
+Stack:     [1]\
+Regs(!=0): 	<tap return>\
+Step 6\
+   8: Push 1\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 7\
+  10: Store 1\
+Stack:     [1]\
+Regs(!=0): 	<tap return>\
+Step 8\
+  12: Pop\
+Stack:     [1]\
+Regs(!=0): x1=1 	<tap return>\
+Step 9\
+  13: Jmp 6\
+Stack:     []\
+Regs(!=0): x1=1 	<tap return>\
+Step 10\
+  20: Halt\
+Stack:     []\
+Regs(!=0): x1=1 	<tap return>\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+*Main> geqTest 6 5\
+Step 1\
+   0: Push 6\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Push 5\
+Stack:     [6]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   4: Ilt\
+Stack:     [6,5]\
+Regs(!=0): 	<tap return>\
+Step 4\
+   5: Ni\
+Stack:     [0]\
+Regs(!=0): 	<tap return>\
+Step 5\
+   6: Jz 8\
+Stack:     [1]\
+Regs(!=0): 	<tap return>\
+Step 6\
+   8: Push 1\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 7\
+  10: Store 1\
+Stack:     [1]\
+Regs(!=0): 	<tap return>\
+Step 8\
+  12: Pop\
+Stack:     [1]\
+Regs(!=0): x1=1 	<tap return>\
+Step 9\
+  13: Jmp 6\
+Stack:     []\
+Regs(!=0): x1=1 	<tap return>\
+Step 10\
+  20: Halt\
+Stack:     []\
+Regs(!=0): x1=1 	<tap return>\
+\
+
+\b \ul Problem 6\
+
+\b0 \ulnone *Main> (clg c9)\
+Step 1\
+   0: Push 3\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Store 0\
+Stack:     [3]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   4: Pop\
+Stack:     [3]\
+Regs(!=0): x0=3 	<tap return>\
+.\
+.\
+.\
+Step 38\
+  21: Jz 11\
+Stack:     [0]\
+Regs(!=0): 	<tap return>\
+Step 39\
+  33: Halt\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+*Main> clg c10\
+Step 1\
+   0: Push 4\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Store 0\
+Stack:     [4]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   4: Pop\
+Stack:     [4]\
+Regs(!=0): x0=4 	<tap return>\
+Step 4\
+   5: Push 1\
+Stack:     []\
+Regs(!=0): x0=4 	<tap return>\
+.\
+.\
+.\
+Step 68\
+  31: Ni\
+Stack:     [1]\
+Regs(!=0): x1=24 	<tap return>\
+Step 69\
+  32: Jz 19\
+Stack:     [0]\
+Regs(!=0): x1=24 	<tap return>\
+Step 70\
+  52: Halt\
+Stack:     []\
+Regs(!=0): x1=24 	<tap return>\
+\
+\
+*Main> clg c5\
+Step 1\
+   0: Push 4\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Store 0\
+Stack:     [4]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   4: Pop\
+Stack:     [4]\
+Regs(!=0): x0=4 	<tap return>\
+Step 4\
+   5: Push 1\
+Stack:     []\
+Regs(!=0): x0=4 	<tap return>\
+Step 5\
+   7: Store 1\
+Stack:     [1]\
+Regs(!=0): x0=4 	<tap return>\
+Step 6\
+   9: Pop\
+Stack:     [1]\
+Regs(!=0): x0=4 x1=1 	<tap return>\
+.\
+.\
+.\
+Step 67\
+  10: Push 0\
+Stack:     []\
+Regs(!=0): x1=24 	<tap return>\
+Step 68\
+  12: Fetch 0\
+Stack:     [0]\
+Regs(!=0): x1=24 	<tap return>\
+Step 69\
+  14: Ilt\
+Stack:     [0,0]\
+Regs(!=0): x1=24 	<tap return>\
+Step 70\
+  15: Jz 19\
+Stack:     [0]\
+Regs(!=0): x1=24 	<tap return>\
+Step 71\
+  35: Halt\
+Stack:     []\
+Regs(!=0): x1=24 	<tap return>\
+\
+*Main> clg c8\
+Step 1\
+   0: Push 4\
+Stack:     []\
+Regs(!=0): 	<tap return>\
+Step 2\
+   2: Store 0\
+Stack:     [4]\
+Regs(!=0): 	<tap return>\
+Step 3\
+   4: Pop\
+Stack:     [4]\
+Regs(!=0): x0=4 	<tap return>\
+Step 4\
+   5: Push 1\
+Stack:     []\
+Regs(!=0): x0=4 	<tap return>\
+Step 5\
+   7: Store 1\
+Stack:     [1]\
+Regs(!=0): x0=4 	<tap return>\
+Step 6\
+   9: Pop\
+Stack:     [1]\
+Regs(!=0): x0=4 x1=1 	<tap return>\
+Step 7\
+  10: Push 0\
+Stack:     []\
+Regs(!=0): x0=4 x1=1 	<tap return>\
+Step 8\
+  12: Fetch 0\
+Stack:     [0]\
+Regs(!=0): x0=4 x1=1 	<tap return>\
+Step 9\
+  14: Ilt\
+Stack:     [0,4]\
+Regs(!=0): x0=4 x1=1 	<tap return>\
+Step 10\
+  15: Jz 19\
+Stack:     [1]\
+Regs(!=0): x0=4 x1=1 	<tap return>\
+Step 11\
+  17: Fetch 1\
+Stack:     []\
+Regs(!=0): x0=4 x1=1 	<tap return>\
+Step 12\
+  19: Fetch 0\
+Stack:     [1]\
+Regs(!=0): x0=4 x1=1 	<tap return>\
+.\
+.\
+.\
+Step 65\
+  32: Pop\
+Stack:     [0]\
+Regs(!=0): x1=24 	<tap return>\
+Step 66\
+  33: Jmp 232\
+Stack:     []\
+Regs(!=0): x1=24 	<tap return>\
+Step 67\
+  10: Push 0\
+Stack:     []\
+Regs(!=0): x1=24 	<tap return>\
+Step 68\
+  12: Fetch 0\
+Stack:     [0]\
+Regs(!=0): x1=24 	<tap return>\
+Step 69\
+  14: Ilt\
+Stack:     [0,0]\
+Regs(!=0): x1=24 	<tap return>\
+Step 70\
+  15: Jz 19\
+Stack:     [0]\
+Regs(!=0): x1=24 	<tap return>\
+Step 71\
+  35: Halt\
+Stack:     []\
+Regs(!=0): x1=24 	<tap return>\
+\
+}
