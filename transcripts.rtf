@@ -1,0 +1,157 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 1. *Main> bmaxDepth t1\
+2\
+\
+2. *Main> mmaxDepth t2\
+	2\
+\
+3. *Main> bleaves t1\
+"amq"\
+\
+*Main> quickCheck bleaves_prop\
++++ OK, passed 100 tests.\
+\
+4. *Main> mleaves t2\
+"cqmgjz"\
+\
+*Main> quickCheck mleaves_prop\
++++ OK, passed 100 tests.\
+\
+5.  *Main> blevel 0 t1\
+""\
+*Main> blevel 1 t1\
+"x"\
+*Main> blevel 2 t1\
+"tw"\
+*Main> blevel 3 t1\
+"amq"\
+*Main> blevel 4 t1\
+""\
+\
+6. *Main> mlevel 0 t2\
+""\
+*Main> mlevel 1 t2\
+"u"\
+*Main> mlevel 2 t2\
+"cqny"\
+*Main> mlevel 3 t2\
+"mgjz"\
+*Main> mlevel 4 t2\
+""\
+\
+7. \
+fullTable (vp :#: vq)\
+P Q | (P#Q)\
+- - | -----\
+T T |   F  \
+T F |   T  \
+F T |   T  \
+F F |   T \
+\
+*Main> fullTable p1\
+P Q | ((P|Q)&(P&Q)) (P|Q) (P&Q)\
+- - | ------------- ----- -----\
+T T |       T         T     T  \
+T F |       F         T     F  \
+F T |       F         T     F  \
+F F |       F         F     F  \
+\
+*Main> fullTable p2\
+P Q | ((P|Q)&((~P)&(~Q))) (P|Q) ((~P)&(~Q)) (~P) (~Q)\
+- - | ------------------- ----- ----------- ---- ----\
+T T |          F            T        F       F    F  \
+T F |          F            T        F       F    T  \
+F T |          F            T        F       T    F  \
+F F |          F            F        T       T    T  \
+\
+8. *Main> quickCheck nand1_prop\
++++ OK, passed 100 tests.\
+\
+*Main> quickCheck nand2_prop\
++++ OK, passed 100 tests.\
+\
+ nandify p2\
+((((P#P)#(Q#Q))#(((P#P)#(Q#Q))#((P#P)#(Q#Q))))#(((P#P)#(Q#Q))#(((P#P)#(Q#Q))#((P#P)#(Q#Q)))))\
+\
+*Main> nandify p1\
+((((P#P)#(Q#Q))#((P#Q)#(P#Q)))#(((P#P)#(Q#Q))#((P#Q)#(P#Q))))\
+\
+9a & b\
+*Main> isNNF p2\
+True\
+\
+*Main> isNNF p1\
+True\
+\
+ *Main> quickCheck nnf1_prop\
++++ OK, passed 100 tests.\
+\
+*Main> quickCheck nnf2_prop\
++++ OK, passed 100 tests.\
+\
+*Main> runTestTT testsNNF\
+Cases: 4  Tried: 4  Errors: 0  Failures: 0\
+Counts \{cases = 4, tried = 4, errors = 0, failures = 0\}\
+\
+*Main> runTestTT testNNF1\
+Cases: 1  Tried: 1  Errors: 0  Failures: 0\
+Counts \{cases = 1, tried = 1, errors = 0, failures = 0\}\
+\
+*Main> runTestTT testNNF2\
+Cases: 1  Tried: 1  Errors: 0  Failures: 0\
+Counts \{cases = 1, tried = 1, errors = 0, failures = 0\}\
+\
+*Main> runTestTT testNNF3\
+Cases: 1  Tried: 1  Errors: 0  Failures: 0\
+Counts \{cases = 1, tried = 1, errors = 0, failures = 0\}\
+\
+*Main> runTestTT testNNF4\
+Cases: 1  Tried: 1  Errors: 0  Failures: 0\
+Counts \{cases = 1, tried = 1, errors = 0, failures = 0\}\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26 \cf0 \cb2 \expnd0\expndtw0\kerning0
+Tests for toNNF\
+\
+*Main> toNNF (Var "q")\
+q\
+*Main> toNNF (T)\
+T\
+*Main> toNNF (F)\
+F\
+*Main> toNNF (Not T)\
+F\
+*Main> toNNF (Not F)\
+T\
+*Main> toNNF (Not (Var "x"))\
+(~x)\
+*Main> toNNF ((Var "x") :|: (Var "p"))\
+(x|p)\
+*Main> toNNF ((Var "x") :&: (Var "p"))\
+(x&p)\
+*Main> toNNF ((Var "x") :#: (Var "p"))\
+(~(x&p))\
+*Main> toNNF ((Var "x") :->: (Var "p"))\
+((~x)|p)\
+*Main> toNNF ((Var "x") :<->: (Var "p"))\
+((x&p)|((~x)&(~p)))\
+*Main> toNNF (Not (Var "x") :<->: (Var "p"))\
+(((~x)&p)|((~(~x))&(~p)))\
+*Main> toNNF (Not (Var "x") :->: (Var "p"))\
+((~(~x))|p)\
+*Main> toNNF (Not (Var "x") :|: (Var "p"))\
+((~x)|p)\
+*Main> toNNF (Not (Var "x") :&: (Var "p"))\
+((~x)&p)\
+*Main> toNNF (Not (Not (Var \'93x\'94)))\
+x
+\f0\fs24 \cb1 \kerning1\expnd0\expndtw0 \
+}
